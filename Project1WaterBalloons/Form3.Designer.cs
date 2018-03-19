@@ -371,30 +371,29 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblLose;
-        private System.Windows.Forms.Label lblWin;
-        private System.Windows.Forms.Label lblDodges;
-        private System.Windows.Forms.Label lblBalloons;
-        private System.Windows.Forms.PictureBox picPlayer;
-        private System.Windows.Forms.Button btnFill;
-        private System.Windows.Forms.Button btnLine;
-        private System.Windows.Forms.Button btnThrow;
-        private System.Windows.Forms.PictureBox picThrow;
-        private System.Windows.Forms.PictureBox picOne;
-        private System.Windows.Forms.PictureBox picTwo;
-        private System.Windows.Forms.PictureBox picThree;
-        private System.Windows.Forms.PictureBox picFour;
-        private System.Windows.Forms.PictureBox picFive;
-        private System.Windows.Forms.PictureBox picSix;
-        private System.Windows.Forms.PictureBox picDodge;
-        private System.Windows.Forms.PictureBox picDodge2;
-        private System.Windows.Forms.CheckBox ckbDodge;
-        private System.Windows.Forms.Label lblDelete;
-        private System.Windows.Forms.PictureBox picWin;
-        private System.Windows.Forms.Button btnStartAgain;
-        private System.Windows.Forms.Label lblWinner;
-        private System.Windows.Forms.Label lblLoser;
-        private System.Windows.Forms.PictureBox picLoser;
+        public System.Windows.Forms.PictureBox picLoser;
+        public System.Windows.Forms.Label lblWin;
+        public System.Windows.Forms.Label lblLose;
+        public System.Windows.Forms.Label lblDodges;
+        public System.Windows.Forms.Label lblBalloons;
+        public System.Windows.Forms.PictureBox picPlayer;
+        public System.Windows.Forms.Button btnFill;
+        public System.Windows.Forms.Button btnLine;
+        public System.Windows.Forms.Button btnThrow;
+        public System.Windows.Forms.PictureBox picThrow;
+        public System.Windows.Forms.PictureBox picOne;
+        public System.Windows.Forms.PictureBox picTwo;
+        public System.Windows.Forms.PictureBox picThree;
+        public System.Windows.Forms.PictureBox picFour;
+        public System.Windows.Forms.PictureBox picFive;
+        public System.Windows.Forms.PictureBox picSix;
+        public System.Windows.Forms.PictureBox picDodge;
+        public System.Windows.Forms.PictureBox picDodge2;
+        public System.Windows.Forms.CheckBox ckbDodge;
+        public System.Windows.Forms.Label lblDelete;
+        public System.Windows.Forms.PictureBox picWin;
+        public System.Windows.Forms.Button btnStartAgain;
+        public System.Windows.Forms.Label lblWinner;
+        public System.Windows.Forms.Label lblLoser;
     }
 }

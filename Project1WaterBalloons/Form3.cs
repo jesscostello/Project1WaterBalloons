@@ -18,8 +18,10 @@ namespace Project1WaterBalloons
         private int Counter = 6;
         private bool dodgeButton = false;
         private int Dodges = 2;
-        private int Wins = 0;
-        private int Losses = 0;
+        //private int Wins = 0;
+        //private int Losses = 0;
+
+        Result myResult = new Result();
 
         public Form3()
         {
@@ -75,7 +77,6 @@ namespace Project1WaterBalloons
             picSix.BackgroundImage = Resources.Balloon;
         }
 
-        
         private void btnThrow_Click(object sender, EventArgs e)
         {
             // call methods
@@ -141,57 +142,62 @@ namespace Project1WaterBalloons
             if (dodgeButton == true)
             {
                 // increase win counter by 1
-                Wins++;
+                //Wins++;
+                //Result myResult = new Result();
+                myResult.Wins++;
                 // call the method
                 EndGame();
                 // play whoosh (dodge) sound
                 SoundPlayer mySoundPlayer = new SoundPlayer(@"C:\Users\Jess\Dropbox\C# Projects\Project1WaterBalloons\Project1WaterBalloons\Resources\Whoosh.wav");
                 mySoundPlayer.Play();
                 // display the winning screen
-                ShowWinningScreen();
+                myResult.ShowWinningScreen();
             }
             // PLAYER LOSES - paint shot hits
             else 
             {
                 // increase losses counter by 1
-                Losses++;
+                //Losses++;
+                //Result myResult = new Result();
+                myResult.Losses++;
                 // call the method
                 EndGame();
                 // play splatter sound
                 SoundPlayer mySoundPlayer = new SoundPlayer(@"C:\Users\Jess\Dropbox\C# Projects\Project1WaterBalloons\Project1WaterBalloons\Resources\Splatter.wav");
                 mySoundPlayer.Play();
                 // display losing screen
-                ShowLosingScreen();
+                myResult.ShowLosingScreen();
             }
         }
 
-        private void ShowLosingScreen()
-        {
-            // display the losing pic/btn/lbl
-            picLoser.Visible = true;
-            btnStartAgain.Visible = true;
-            lblLoser.Visible = true;
-            // bring btn/lbl in front of pic
-            btnStartAgain.BringToFront();
-            lblLoser.BringToFront();
-        }
+        //private void ShowLosingScreen()
+        //{
+        //    // display the losing pic/btn/lbl
+        //    picLoser.Visible = true;
+        //    btnStartAgain.Visible = true;
+        //    lblLoser.Visible = true;
+        //    // bring btn/lbl in front of pic
+        //    btnStartAgain.BringToFront();
+        //    lblLoser.BringToFront();
+        //}
 
-        private void ShowWinningScreen()
-        {
-            // display the winning pic/btn/lbl
-            picWin.Visible = true;
-            btnStartAgain.Visible = true;
-            lblWinner.Visible = true;
-            // bring btn/lbl in front of pic
-            btnStartAgain.BringToFront();
-            lblWinner.BringToFront();
-        }
+        //private void ShowWinningScreen()
+        //{
+        //    // display the winning pic/btn/lbl
+        //    picWin.Visible = true;
+        //    btnStartAgain.Visible = true;
+        //    lblWinner.Visible = true;
+        //    // bring btn/lbl in front of pic
+        //    btnStartAgain.BringToFront();
+        //    lblWinner.BringToFront();
+        //}
 
         private void EndGame()
         {
+            //Result myResult = new Result();
             // display wins / losses totals
-            lblWin.Text = "Wins: " + Wins;
-            lblLose.Text = "Losses: " + Losses;
+            lblWin.Text = "Wins: " + myResult.Wins;
+            lblLose.Text = "Losses: " + myResult.Losses;
             // reset images (don't show any balloons)
             picOne.Visible = false;
             picTwo.Visible = false;
