@@ -13,6 +13,7 @@ namespace Project1WaterBalloons
 {
     public partial class Form3 : Form
     {
+        // TODO make into properties inside classes
         private int RdmNum;
         private int Counter = 6;
         private bool dodgeButton = false;
@@ -24,9 +25,7 @@ namespace Project1WaterBalloons
         {
             InitializeComponent();
         }
-        // generate random number - complete
-        // line up balloons button enabled
-        // wins / losses
+        
         private void btnFill_Click(object sender, EventArgs e)
         {
             // generate random number
@@ -39,24 +38,31 @@ namespace Project1WaterBalloons
 
         private int GetRandom()
         {
+            // generate a random number from 1-6
             Random myRandomNumber = new Random();
             int rnd = myRandomNumber.Next(1, 7);
+            // return the random number
             return rnd;
         }
 
         private void btnLine_Click(object sender, EventArgs e)
         {
-            // show all balloons remaining
+            // reset images from splash to balloon image
             ResetBalloonImages();
+            // show all balloons remaining
+            DisplayBalloonImages();
+            // enable 'throw' button
+            btnThrow.Enabled = true;
+        }
+
+        private void DisplayBalloonImages()
+        {
             picOne.Visible = true;
             picTwo.Visible = true;
             picThree.Visible = true;
             picFour.Visible = true;
             picFive.Visible = true;
             picSix.Visible = true;
-            
-            // enable 'throw' button
-            btnThrow.Enabled = true;
         }
 
         private void ResetBalloonImages()
@@ -69,17 +75,16 @@ namespace Project1WaterBalloons
             picSix.BackgroundImage = Resources.Balloon;
         }
 
-        // check random number against counter
-        // add sound effect
-        // decide if win or loss
-        // decide if game is over
+        
         private void btnThrow_Click(object sender, EventArgs e)
         {
+            // call methods
             CheckDodge();
             CheckBalloon();
 
             // decrease counter
             Counter--;
+            // reset dodge checkbox
             dodgeButton = false;
         }
 
@@ -88,8 +93,11 @@ namespace Project1WaterBalloons
             // check if dodge is selected
             if (ckbDodge.Checked == true)
             {
+                // decrease dodges counter total
                 Dodges--;
+                // set dodge button to true because player has dodged
                 dodgeButton = true;
+                // remove 'dodge' images when they are used
                 if (Dodges  == 1)
                 {
                     picDodge2.Visible = false;
@@ -97,10 +105,12 @@ namespace Project1WaterBalloons
                 if (Dodges == 0)
                 {
                     picDodge.Visible = false;
+                    // when no dodges left
+                    // disable checkbox for rest of game
                     ckbDodge.Enabled = false;
                 }
+                // reset checkbox back to unchecked
                 ckbDodge.Checked = false;
-
             }
         }
 
@@ -109,6 +119,7 @@ namespace Project1WaterBalloons
             // if the balloon has the paint
             if (RdmNum == Counter)
             {
+                // call the method
                 DetermineResult();
             }
 
@@ -119,7 +130,7 @@ namespace Project1WaterBalloons
                 SoundPlayer mySoundPlayer = new SoundPlayer(@"C:\Users\Jess\Dropbox\C# Projects\Project1WaterBalloons\Project1WaterBalloons\Resources\Splash.wav");
                 mySoundPlayer.Play();
 
-                // Call the next function
+                // Call the next method
                 ShowBalloonUsed();                
             }
         }
@@ -129,43 +140,49 @@ namespace Project1WaterBalloons
             // PLAYER WINS - paint shot misses
             if (dodgeButton == true)
             {
-                // win counter ++
+                // increase win counter by 1
                 Wins++;
-                // start new game
+                // call the method
                 EndGame();
                 // play whoosh (dodge) sound
                 SoundPlayer mySoundPlayer = new SoundPlayer(@"C:\Users\Jess\Dropbox\C# Projects\Project1WaterBalloons\Project1WaterBalloons\Resources\Whoosh.wav");
                 mySoundPlayer.Play();
+                // display the winning screen
                 ShowWinningScreen();
             }
             // PLAYER LOSES - paint shot hits
             else 
             {
-                // losses counter ++
+                // increase losses counter by 1
                 Losses++;
-                // start new game
+                // call the method
                 EndGame();
                 // play splatter sound
                 SoundPlayer mySoundPlayer = new SoundPlayer(@"C:\Users\Jess\Dropbox\C# Projects\Project1WaterBalloons\Project1WaterBalloons\Resources\Splatter.wav");
                 mySoundPlayer.Play();
+                // display losing screen
                 ShowLosingScreen();
             }
         }
 
         private void ShowLosingScreen()
         {
+            // display the losing pic/btn/lbl
             picLoser.Visible = true;
             btnStartAgain.Visible = true;
             lblLoser.Visible = true;
+            // bring btn/lbl in front of pic
             btnStartAgain.BringToFront();
             lblLoser.BringToFront();
         }
 
         private void ShowWinningScreen()
         {
+            // display the winning pic/btn/lbl
             picWin.Visible = true;
             btnStartAgain.Visible = true;
             lblWinner.Visible = true;
+            // bring btn/lbl in front of pic
             btnStartAgain.BringToFront();
             lblWinner.BringToFront();
         }
@@ -175,7 +192,7 @@ namespace Project1WaterBalloons
             // display wins / losses totals
             lblWin.Text = "Wins: " + Wins;
             lblLose.Text = "Losses: " + Losses;
-            // reset images
+            // reset images (don't show any balloons)
             picOne.Visible = false;
             picTwo.Visible = false;
             picThree.Visible = false;
@@ -198,7 +215,8 @@ namespace Project1WaterBalloons
 
         private void ShowBalloonUsed()
         {
-            // allow the player to have another turn
+            // change the image from balloon to splash if the
+            // balloon had the water in it
             if (Counter == 6)
             {
                 picSix.BackgroundImage = Resources.Splash;
@@ -227,6 +245,7 @@ namespace Project1WaterBalloons
 
         private void btnStartAgain_Click(object sender, EventArgs e)
         {
+            // hide winning/losing screen to display the game again
             picWin.Visible = false;
             picLoser.Visible = false;
             btnStartAgain.Visible = false;
