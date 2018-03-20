@@ -21,11 +21,12 @@ namespace Project1WaterBalloons
         //private int Wins = 0;
         //private int Losses = 0;
 
-        Result myResult = new Result();
+        //Result myResult = new Result();
 
         public Form3()
         {
             InitializeComponent();
+            Result testResult = new Result(this);
         }
         
         private void btnFill_Click(object sender, EventArgs e)
@@ -144,14 +145,14 @@ namespace Project1WaterBalloons
                 // increase win counter by 1
                 //Wins++;
                 //Result myResult = new Result();
-                myResult.Wins++;
+                //myResult.Wins++;
                 // call the method
                 EndGame();
                 // play whoosh (dodge) sound
                 SoundPlayer mySoundPlayer = new SoundPlayer(@"C:\Users\Jess\Dropbox\C# Projects\Project1WaterBalloons\Project1WaterBalloons\Resources\Whoosh.wav");
                 mySoundPlayer.Play();
                 // display the winning screen
-                myResult.ShowWinningScreen();
+                //myResult.ShowWinningScreen();
             }
             // PLAYER LOSES - paint shot hits
             else 
@@ -159,14 +160,14 @@ namespace Project1WaterBalloons
                 // increase losses counter by 1
                 //Losses++;
                 //Result myResult = new Result();
-                myResult.Losses++;
+                //myResult.Losses++;
                 // call the method
                 EndGame();
                 // play splatter sound
                 SoundPlayer mySoundPlayer = new SoundPlayer(@"C:\Users\Jess\Dropbox\C# Projects\Project1WaterBalloons\Project1WaterBalloons\Resources\Splatter.wav");
                 mySoundPlayer.Play();
                 // display losing screen
-                myResult.ShowLosingScreen();
+                //myResult.ShowLosingScreen();
             }
         }
 
@@ -196,8 +197,8 @@ namespace Project1WaterBalloons
         {
             //Result myResult = new Result();
             // display wins / losses totals
-            lblWin.Text = "Wins: " + myResult.Wins;
-            lblLose.Text = "Losses: " + myResult.Losses;
+            //lblWin.Text = "Wins: " + myResult.Wins;
+            //lblLose.Text = "Losses: " + myResult.Losses;
             // reset images (don't show any balloons)
             picOne.Visible = false;
             picTwo.Visible = false;

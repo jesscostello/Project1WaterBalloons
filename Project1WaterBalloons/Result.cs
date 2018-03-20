@@ -9,11 +9,19 @@ namespace Project1WaterBalloons
 {
     class Result
     {
-        PictureBox picWin = new PictureBox();
-        PictureBox picLoser = new PictureBox();
-        Button btnStartAgain = new Button();
-        Label lblWinner = new Label();
-        Label lblLoser = new Label();
+        public Form3 mainForm;
+
+        public Result(Form3 form3)
+        {
+            mainForm = form3;
+        }
+        
+
+        //PictureBox picWin = new PictureBox();
+        //PictureBox picLoser = new PictureBox();
+        //Button btnStartAgain = new Button();
+        //Label lblWinner = new Label();
+        //Label lblLoser = new Label();
 
         // setting properties 
         public int Wins { get; set; } = 0;
@@ -25,12 +33,12 @@ namespace Project1WaterBalloons
         public void ShowWinningScreen()
         {
             // display the winning pic/btn/lbl
-            picWin.Visible = true;
-            btnStartAgain.Visible = true;
-            lblWinner.Visible = true;
+            mainForm.picWin.Visible = true;
+            mainForm.btnStartAgain.Visible = true;
+            mainForm.lblWinner.Visible = true;
             // bring btn/lbl in front of pic
-            btnStartAgain.BringToFront();
-            lblWinner.BringToFront();
+            mainForm.btnStartAgain.BringToFront();
+            mainForm.lblWinner.BringToFront();
         }
 
         /// <summary>
@@ -39,12 +47,12 @@ namespace Project1WaterBalloons
         public void ShowLosingScreen()
         {
             // display the losing pic/btn/lbl
-            picLoser.Visible = true;
-            btnStartAgain.Visible = true;
-            lblLoser.Visible = true;
+            mainForm.picLoser.Visible = true;
+            mainForm.btnStartAgain.Visible = true;
+            mainForm.lblLoser.Visible = true;
             // bring btn/lbl in front of pic
-            btnStartAgain.BringToFront();
-            lblLoser.BringToFront();
+            mainForm.btnStartAgain.BringToFront();
+            mainForm.lblLoser.BringToFront();
         }
     }
 }
