@@ -24,7 +24,9 @@ namespace Project1WaterBalloons
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// ON BUTTON FILL BALLOONS CLICK
+        /// </summary>
         private void btnFill_Click(object sender, EventArgs e)
         {
             // generate random number
@@ -32,7 +34,9 @@ namespace Project1WaterBalloons
             // enable 'line up balloons' button
             btnLine.Enabled = true;
         }
-
+        /// <summary>
+        /// ON LINE UP BALLOONS BUTTON CLICK
+        /// </summary>
         private void btnLine_Click(object sender, EventArgs e)
         {
             // show all balloons remaining and reset images from splash to balloon image
@@ -40,7 +44,9 @@ namespace Project1WaterBalloons
             // enable 'throw' button
             btnThrow.Enabled = true;
         }
-
+        /// <summary>
+        /// DISPLAY AND RESET BALLOON IMAGES
+        /// </summary>
         private void DisplayAndResetBalloonImages()
         {
             picOne.Visible = true;
@@ -56,11 +62,12 @@ namespace Project1WaterBalloons
             picFive.BackgroundImage = Resources.Balloon;
             picSix.BackgroundImage = Resources.Balloon;
         }
-
+        /// <summary>
+        /// ON THROW BUTTON CLICK
+        /// </summary>
         private void btnThrow_Click(object sender, EventArgs e)
         {
             // call methods
-            // todo 
             CheckDodge();
             CheckBalloon();
 
@@ -69,7 +76,9 @@ namespace Project1WaterBalloons
             // reset dodge checkbox
             myDodgeCheckbox.SetToFalse();   
         }
-
+        /// <summary>
+        /// CHECK IF THE BALLOON HAS BEEN DODGED
+        /// </summary>
         private void CheckDodge()
         {
             // check if dodge is selected
@@ -95,8 +104,10 @@ namespace Project1WaterBalloons
                 ckbDodge.Checked = false;
             }
         }
-
-        private void CheckBalloon()
+        /// <summary>
+        /// CHECK IF THE BALLOON HAS PAINT IN IT
+        /// </summary>
+        public void CheckBalloon()
         {
             // if the balloon has the paint
             if (myRandomBalloonNumber.RdmNum == myBalloonCounter.Counter)
@@ -116,7 +127,9 @@ namespace Project1WaterBalloons
                 ShowBalloonUsed();                
             }
         }
-
+        /// <summary>
+        /// CHECK IF THE PLAYER WINS OR LOSES
+        /// </summary>
         private void DetermineResult()
         {
             // PLAYER WINS - paint shot misses
@@ -146,7 +159,9 @@ namespace Project1WaterBalloons
                 ShowLosingScreen();
             }
         }
-
+        /// <summary>
+        /// DISPLAY THE LOSING SCREEN
+        /// </summary>
         private void ShowLosingScreen()
         {
             // display the losing pic/btn/lbl
@@ -157,7 +172,9 @@ namespace Project1WaterBalloons
             btnStartAgain.BringToFront();
             lblLoser.BringToFront();
         }
-
+        /// <summary>
+        /// DISPLAY THE WINNING SCREEN
+        /// </summary>
         private void ShowWinningScreen()
         {
             // display the winning pic/btn/lbl
@@ -168,7 +185,9 @@ namespace Project1WaterBalloons
             btnStartAgain.BringToFront();
             lblWinner.BringToFront();
         }
-
+        /// <summary>
+        /// END THE GAME AND RESET SO THE PLAYER CAN PLAY AGAIN
+        /// </summary>
         public void EndGame()
         {
             // display wins / losses totals
@@ -194,7 +213,9 @@ namespace Project1WaterBalloons
             picDodge.Visible = true;
             picDodge2.Visible = true;
         }
-
+        /// <summary>
+        /// REMOVE THE BALLOON IMAGE OF THE BALLOON WHICH HAS BEEN THROWN
+        /// </summary>
         private void ShowBalloonUsed()
         {
             // change the image from balloon to splash if the
@@ -224,7 +245,9 @@ namespace Project1WaterBalloons
                 picOne.BackgroundImage = Resources.Splash;
             }
         }
-
+        /// <summary>
+        /// ON START AGAIN BUTTON CLICK
+        /// </summary>
         private void btnStartAgain_Click(object sender, EventArgs e)
         {
             // hide winning/losing screen to display the game again
