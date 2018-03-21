@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Project1WaterBalloons
 {
-    class RandomNumber
+    class Dodges
     {
+        public int dodges { get; set; } = 2;
+
+        public int DecreaseDodgeTotal()
+        {
+
+            return dodges;
+        }
     }
 }
