@@ -8,10 +8,13 @@ namespace UnitTestProject1
     [TestClass]
     public class UnitTest1
     {
-        Form3 f3 = new Form3();
         RandomBalloonNumber myNumber = new RandomBalloonNumber();
         BalloonCounter myBalloonCounter = new BalloonCounter();
+        Result myResult = new Result();
 
+        /// <summary>
+        /// Test that the random number generated is between 1 and 6
+        /// </summary>
         [TestMethod]
         public void TestRandomNumber()
         {
@@ -19,15 +22,37 @@ namespace UnitTestProject1
 
             Assert.IsTrue(RdmNum >0 && RdmNum <7);
         }
-
+        /// <summary>
+        /// Test that the counter decreases by 1 
+        /// </summary>
         [TestMethod]
         public void TestBalloonCountDown()
         {
-            int Counter = myBalloonCounter.DecreaseCounterValue();
+            int DecreasedCounter = myBalloonCounter.DecreaseCounterValue();
 
-            Assert.AreEqual(5, Counter);
+            Assert.AreEqual(5, DecreasedCounter);
+        }
+        /// <summary>
+        /// Test that the counter is initially set to 6
+        /// </summary>
+        [TestMethod]
+        public void TestCounterAtSix()
+        {
+            Assert.AreEqual(6, myBalloonCounter.Counter);
         }
 
-        
+        [TestMethod]
+        public void TestWinResultIncrease()
+        {
+            int WinTotal = myResult.IncreaseWinTotal();
+            Assert.AreEqual(1, WinTotal);
+        }
+
+        [TestMethod]
+        public void TestWinResultChanges()
+        {
+            int WinTotal = myResult.IncreaseWinTotal();
+            Assert.IsFalse(WinTotal == 0);
+        }
     }
 }
