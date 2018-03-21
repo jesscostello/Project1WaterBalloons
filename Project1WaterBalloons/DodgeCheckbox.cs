@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project1WaterBalloons
 {
-    class DodgeCheckbox
+    public class DodgeCheckbox
     {
         public bool dodgeButton { get; set; } = false;
 

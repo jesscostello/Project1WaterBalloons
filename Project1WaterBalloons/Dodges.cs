@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Project1WaterBalloons
 {
-    class Dodges
+    public class Dodges
     {
         public int dodges { get; set; } = 2;
 
         public int DecreaseDodgeTotal()
         {
-
+            dodges--;
             return dodges;
         }
     }

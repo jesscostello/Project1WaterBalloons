@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Project1WaterBalloons
 {
-    class BalloonCounter
+    public class BalloonCounter
     {
         public int Counter { get; set; } = 6;
 

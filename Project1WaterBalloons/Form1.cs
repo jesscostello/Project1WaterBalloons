@@ -11,15 +11,6 @@ using System.Windows.Forms;
 
 namespace Project1WaterBalloons
 {
-    // At least one image - Complete
-    // todo At least one sound
-    // todo Display Win/Lose scores
-    // todo At least one class
-    // todo Includes Win/Lose class
-    // todo All variables in classes
-    // todo At least two unit tests (of major parts)
-    // todo Comment all significant code
-    
     public partial class Form1 : Form
     {
         public Form1()

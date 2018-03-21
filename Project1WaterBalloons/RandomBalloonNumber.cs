@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Project1WaterBalloons
 {
-    class RandomBalloonNumber
+    public class RandomBalloonNumber
     {
         public int RdmNum { get; set; }
 
-        public string GenerateRandom()
+        public int GenerateRandom()
         {
-            RdmNum = GetRandom();
-            return RdmNum.ToString();
+            return RdmNum = GetRandom();
         }
 
         public int GetRandom()
