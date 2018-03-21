@@ -40,14 +40,18 @@ namespace UnitTestProject1
         {
             Assert.AreEqual(6, myBalloonCounter.Counter);
         }
-
+        /// <summary>
+        /// Test that the winning total increases
+        /// </summary>
         [TestMethod]
         public void TestWinResultIncrease()
         {
             int WinTotal = myResult.IncreaseWinTotal();
             Assert.AreEqual(1, WinTotal);
         }
-
+        /// <summary>
+        /// Another test to make sure the win result increases (is not 0)
+        /// </summary>
         [TestMethod]
         public void TestWinResultChanges()
         {
