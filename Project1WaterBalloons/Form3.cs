@@ -11,8 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Project1WaterBalloons
-{
-
+{ 
     public partial class Form3 : Form
     {
         Result myResult = new Result();
@@ -30,8 +29,6 @@ namespace Project1WaterBalloons
         {
             // generate random number
             myRandomBalloonNumber.GenerateRandom();
-            // DELETE THIS
-            lblDelete.Text = myRandomBalloonNumber.GenerateRandom();
             // enable 'line up balloons' button
             btnLine.Enabled = true;
         }
@@ -70,8 +67,7 @@ namespace Project1WaterBalloons
             // decrease counter
             myBalloonCounter.DecreaseCounterValue();
             // reset dodge checkbox
-            myDodgeCheckbox.SetToFalse();
-            
+            myDodgeCheckbox.SetToFalse();   
         }
 
         private void CheckDodge()
