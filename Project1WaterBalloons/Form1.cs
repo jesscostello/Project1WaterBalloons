@@ -24,14 +24,15 @@ namespace Project1WaterBalloons
             Form2 f2 = new Form2();
             f2.ShowDialog(); // Show how to play form
         }
-
+        // close the current form
+        // open the game window
         private void btnStart_Click(object sender, EventArgs e)
         {
             // open form with game
             Form3 f3 = new Form3();
-            f3.ShowDialog();
+            f3.Show();
             // close this form
-            this.Close();
+            this.Visible = false;
         }
     }
 }
